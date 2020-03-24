@@ -1,6 +1,6 @@
 [print]
-name = Cura_brsc_FTI-1_0_0_configuration_workaround
-defaultQuality = GJZpCODhQqEnVj9lYG7ZRq5QalFzPzU1
+name = Cura_brsc_FTI-1_0_0_configurations
+defaultQuality = MmyLKXKjSBDkFS82UtkWudqmAwlTWlwC
 travelSpeedMin = 150
 travelSpeedMax = 150
 firstLayerSpeedMin = 30
@@ -99,16 +99,22 @@ fanFullAtHeight = 0.5
 perimeterBeforeInfill = True
 minimumSpeed = 10
 coolHeadLift = False
-numQuality = 2
+numQuality = 3
 [quality_0]
+name = 0.5 mm
+signature = MmyLKXKjSBDkFS82UtkWudqmAwlTWlwC
+layerHeight = 0.5
+layer0widthPercent = 100
+firstLayerHeight = 0.6
+[quality_1]
 name = 0.4 mm
 signature = GJZpCODhQqEnVj9lYG7ZRq5QalFzPzU1
 layerHeight = 0.4
 layer0widthPercent = 100
 firstLayerHeight = 0.6
-[quality_1]
-name = 0.2 mm
+[quality_2]
+name = 0.25 mm
 signature = 6XUbRS09PCTmx5XFw5vhwsvWBsDP7bhT
-layerHeight = 0.2
+layerHeight = 0.25
 layer0widthPercent = 100
-firstLayerHeight = 0.3
+firstLayerHeight = 0.6
