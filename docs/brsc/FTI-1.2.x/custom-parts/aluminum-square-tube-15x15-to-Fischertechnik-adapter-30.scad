@@ -42,17 +42,17 @@ module ftiSpuareTubeAdapter15x15(ftiEndCapLength=15) {
         }
 
         // square tube connector part
-        translate([2, 2, ftiEndCapLength])difference() {
+        translate([1, 1, ftiEndCapLength])difference() {
             hTubeConn=(ftiEndCapLength < 60) ? 30 : (ftiEndCapLength < 75 ? 45 : 60);
             dCarveOut=8; // carve out diameter
             oCarveOut=6; // carve out offset
             // corpus
-            cube([11, 11, hTubeConn]);
+            cube([13, 13, hTubeConn]);
             // space
-            translate([5.5,dCarveOut/2-oCarveOut,0])cylinder(h=hTubeConn, d=dCarveOut);
-            translate([5.5,11-dCarveOut/2+oCarveOut,0])cylinder(h=hTubeConn, d=dCarveOut);
-            translate([11-dCarveOut/2+oCarveOut,5.5,0])cylinder(h=hTubeConn, d=dCarveOut);
-            translate([dCarveOut/2-oCarveOut,5.5,0])cylinder(h=hTubeConn, d=dCarveOut);
+            translate([6.5,dCarveOut/2-oCarveOut,0])cylinder(h=hTubeConn, d=dCarveOut);
+            translate([6.5,13-dCarveOut/2+oCarveOut,0])cylinder(h=hTubeConn, d=dCarveOut);
+            translate([13-dCarveOut/2+oCarveOut,6.5,0])cylinder(h=hTubeConn, d=dCarveOut);
+            translate([dCarveOut/2-oCarveOut,6.5,0])cylinder(h=hTubeConn, d=dCarveOut);
         }
     }
 }
