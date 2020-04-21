@@ -35,9 +35,10 @@ module ftiSpuareTubeAdapter15x15(ftiEndCapLength=15) {
             translate([15-dFti/2,7.5-gFtiW/2,0])cube([gFtiD, gFtiW, ftiEndCapLength]);
             translate([0,7.5-gFtiW/2,0])cube([gFtiD, gFtiW, ftiEndCapLength]);
             // orthoganal axis at end
-            translate([7.5, 15, 0])rotate([90, 0, 0])cylinder(h=15, d=dFti);
+            translate([7.5, 15, dFti/2])rotate([90, 0, 0])cylinder(h=15, d=dFti);
             translate([7.5-dFti/2, 15-dFti/2, 0])cube([dFti, dFti, dFti]);
             translate([7.5-dFti/2, 0-dFti/2, 0])cube([dFti, dFti, dFti]);
+            translate([7.5+gFtiW/2, 0, -gFtiD/2])rotate([270, 180, 0])cube([gFtiW, gFtiD, 15]);
         }
 
         // square tube connector part
