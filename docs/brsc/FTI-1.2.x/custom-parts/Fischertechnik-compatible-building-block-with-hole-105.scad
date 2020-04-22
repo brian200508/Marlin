@@ -7,7 +7,7 @@
 
 /* [Block length] */
 // Building block length in millimeters
-BlockLength=90; // [30, 45, 60, 75, 90, 105, 120]
+BlockLength=105; // [30, 45, 60, 75, 90, 105, 120]
 
 /* [Has Hole in center] */
 // Building block has hole for 4mm axis in the center
