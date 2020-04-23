@@ -20,8 +20,8 @@ module ftiSpuareTubeAdapter15x15(ftiEndCapLength=15) {
 
         // Fischertechnik connector part
         difference() {
-            dFti=4.5; // axis diameter 4mm + some space around
-            dBlock=15.5; // block (max) diameter + some more around (adjust to Your printer)
+            dFti=4 + .8; // axis diameter 4mm + some space around
+            dBlock=15 + 1; // block (max) diameter + some more around (adjust to Your printer)
             gFtiW=3; // with of gap
             gFtiD=2; // depth of gap
             cube([dBlock, dBlock, ftiEndCapLength]);
@@ -47,7 +47,7 @@ module ftiSpuareTubeAdapter15x15(ftiEndCapLength=15) {
             hTubeConn=(ftiEndCapLength < 60) ? 30 : (ftiEndCapLength < 75 ? 45 : 60);
             dCarveOut=8; // carve out diameter
             oCarveOut=6; // carve out offset
-            dConnector=13.5; // connector (max) diameter + some more around (adjust to Your printer)
+            dConnector=13 + 1; // connector (max) diameter + some more around (adjust to Your printer)
             // corpus
             cube([dConnector, dConnector, hTubeConn]);
             // space
