@@ -1,3 +1,19 @@
+Brian Schroeder's RepRap FTI-Strap
+==================================
+Another Fischertechnik RepRap Strap (using Marlin 3D Printer Firmware) built with Fischertechnik parts of the late 80's and some non-Fischertechnik pars from today; especially
+- Nema 17 Stepper Motors
+- MK 8 Extruder
+- Arduino AVR Mega ATMEGA256
+- RAMPS 1.6 Board
+- GT2 timing belts and gears
+
+![Photo RepRap FTI-Strap](docs/brsc/FTI-1.1.x/pictures/IMG_20200419_235148.jpg)
+
+Thanks and very best Regards to Marlin and RepRap.
+https://github.com/MarlinFirmware/Marlin
+https://reprap.org
+
+
 # Marlin 3D Printer Firmware
 
 ![GitHub](https://img.shields.io/github/license/marlinfirmware/marlin.svg)
