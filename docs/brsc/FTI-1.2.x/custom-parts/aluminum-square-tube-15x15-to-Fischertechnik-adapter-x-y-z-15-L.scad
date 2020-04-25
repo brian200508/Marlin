@@ -47,7 +47,7 @@ module ftiSpuareTubeAdapter15x15(ftiEndCapLength=15) {
             hTubeConn=(ftiEndCapLength < 60) ? 30 : (ftiEndCapLength < 75 ? 45 : 60);
             dCarveOut=8; // carve out diameter
             oCarveOut=6; // carve out offset
-            dConnector=12.5 + 1; // connector (max) diameter + some more around (adjust to Your printer)
+            dConnector=12.5 + .5; // connector (max) diameter + some more around (adjust to Your printer)
             // corpus
             cube([dConnector, dConnector, hTubeConn]);
             // space
@@ -62,7 +62,7 @@ module ftiSpuareTubeAdapter15x15(ftiEndCapLength=15) {
             hTubeConn=(ftiEndCapLength < 60) ? 30 : (ftiEndCapLength < 75 ? 45 : 60);
             dCarveOut=8; // carve out diameter
             oCarveOut=6; // carve out offset
-            dConnector=12.5 + 1; // connector (max) diameter + some more around (adjust to Your printer)
+            dConnector=12.5 + .5; // connector (max) diameter + some more around (adjust to Your printer)
             // corpus
             cube([dConnector, dConnector, hTubeConn]);
             // space
@@ -77,7 +77,7 @@ module ftiSpuareTubeAdapter15x15(ftiEndCapLength=15) {
             hTubeConn=(ftiEndCapLength < 60) ? 30 : (ftiEndCapLength < 75 ? 45 : 60);
             dCarveOut=8; // carve out diameter
             oCarveOut=6; // carve out offset
-            dConnector=12.5 + 1; // connector (max) diameter + some more around (adjust to Your printer)
+            dConnector=12.5 + .5; // connector (max) diameter + some more around (adjust to Your printer)
             // corpus
             cube([dConnector, dConnector, hTubeConn]);
             // space
