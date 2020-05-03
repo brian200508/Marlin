@@ -5,7 +5,6 @@ Brian Schroeder's RepRap FTI-Strap
 Custom parts required for brsc/FTI-1.2-0:
 
 Self printed parts:
-- 2x 'Fischertechnik-compatible-building-block-with-hole-90' ![Fischertechnik-compatible-building-block-with-hole-90](Fischertechnik-compatible-building-block-with-hole-90.png)
 - 4x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-15.png)
 - 1 part of 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L](aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L.png)
 - 1 part of 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R](aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R.png)
