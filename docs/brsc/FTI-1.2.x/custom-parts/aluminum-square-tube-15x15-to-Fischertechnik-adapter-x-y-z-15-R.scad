@@ -18,6 +18,11 @@ module ftiSpuareTubeAdapter15x15(ftiEndCapLength=15) {
 
     union() {
         dBlock=15 + 1; // block (max) diameter + some more around (adjust to Your printer)
+        hTubeConn=(ftiEndCapLength < 60) ? 30 : (ftiEndCapLength < 75 ? 45 : 60);
+        dCarveOut=8; // carve out diameter
+        oCarveOut=6; // carve out offset
+        dConnector=12.5 + .5; // connector (max) diameter + some more around (adjust to Your printer)
+        dBorder=(dBlock-dConnector)/2; // the square tube border diameter
 
         // Fischertechnik connector part
         difference() {
@@ -43,11 +48,7 @@ module ftiSpuareTubeAdapter15x15(ftiEndCapLength=15) {
         }
 
         // square tube connector part
-        translate([1, 1, ftiEndCapLength])difference() {
-            hTubeConn=(ftiEndCapLength < 60) ? 30 : (ftiEndCapLength < 75 ? 45 : 60);
-            dCarveOut=8; // carve out diameter
-            oCarveOut=6; // carve out offset
-            dConnector=12.5 + .5; // connector (max) diameter + some more around (adjust to Your printer)
+        translate([dBorder, dBorder, ftiEndCapLength])difference() {
             // corpus
             cube([dConnector, dConnector, hTubeConn]);
             // space
@@ -58,11 +59,7 @@ module ftiSpuareTubeAdapter15x15(ftiEndCapLength=15) {
         }
 
         // square tube connector part
-        rotate([90, 0, 90])translate([1, 1, ftiEndCapLength])difference() {
-            hTubeConn=(ftiEndCapLength < 60) ? 30 : (ftiEndCapLength < 75 ? 45 : 60);
-            dCarveOut=8; // carve out diameter
-            oCarveOut=6; // carve out offset
-            dConnector=12.5 + .5; // connector (max) diameter + some more around (adjust to Your printer)
+        rotate([90, 0, 90])translate([dBorder, 1, ftiEndCapLength])difference() {
             // corpus
             cube([dConnector, dConnector, hTubeConn]);
             // space
@@ -73,11 +70,7 @@ module ftiSpuareTubeAdapter15x15(ftiEndCapLength=15) {
         }
 
         // square tube connector part
-        translate([dBlock, 0, 0])rotate([90, 0, 180])translate([1, 1, ftiEndCapLength])difference() {
-            hTubeConn=(ftiEndCapLength < 60) ? 30 : (ftiEndCapLength < 75 ? 45 : 60);
-            dCarveOut=8; // carve out diameter
-            oCarveOut=6; // carve out offset
-            dConnector=12.5 + .5; // connector (max) diameter + some more around (adjust to Your printer)
+        translate([dBlock, 0, 0])rotate([90, 0, 180])translate([dBorder, 1, ftiEndCapLength])difference() {
             // corpus
             cube([dConnector, dConnector, hTubeConn]);
             // space

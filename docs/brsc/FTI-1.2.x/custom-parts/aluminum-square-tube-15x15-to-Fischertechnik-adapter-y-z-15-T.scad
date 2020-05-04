@@ -68,6 +68,17 @@ module ftiSpuareTubeAdapter15x15(ftiEndCapLength=15) {
             translate([dConnector-dCarveOut/2+oCarveOut,dConnector/2,0])cylinder(h=hTubeConn, d=dCarveOut);
             translate([dCarveOut/2-oCarveOut,dConnector/2,0])cylinder(h=hTubeConn, d=dCarveOut);
         }
+
+        // square tube connector part
+        translate([dBlock, dBlock, dBlock])rotate([-90, 0, 180])translate([dBorder, .5+dBorder, ftiEndCapLength])difference() {
+            // corpus
+            cube([dConnector, dConnector, hTubeConn]);
+            // space
+            translate([dConnector/2,dCarveOut/2-oCarveOut,0])cylinder(h=hTubeConn, d=dCarveOut);
+            translate([dConnector/2,dConnector-dCarveOut/2+oCarveOut,0])cylinder(h=hTubeConn, d=dCarveOut);
+            translate([dConnector-dCarveOut/2+oCarveOut,dConnector/2,0])cylinder(h=hTubeConn, d=dCarveOut);
+            translate([dCarveOut/2-oCarveOut,dConnector/2,0])cylinder(h=hTubeConn, d=dCarveOut);
+        }
     }
 }
 
