@@ -9,6 +9,7 @@ Self printed parts:
 - 1 part of 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L](aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L.png)
 - 1 part of 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R](aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R.png)
 - 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15.png)
+- 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-with-hole' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-with-hole](aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-with-hole.png)
 
 
 Standard (non-Fischertechnik parts):
