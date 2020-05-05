@@ -9,6 +9,10 @@
 // Fischertechnik compatible end cap length in millimeters
 EndCapLength=15; // [15, 30, 45, 60, 75, 90]
 
+/* [Axis Z direction] */
+// Orientation of the axis at the ends: use 1 for Z direction (default) or 0 for X direction
+AxisZDirection=1; // [0, 1]
+
 /*
  * Create the adapter with Fischertechnik compatible end cap length passed by the argument.
  *
@@ -25,7 +29,9 @@ module ftiSpuareTubeAdapter15x15(ftiEndCapLength=15) {
         dBorder=(dBlock-dConnector)/2; // the square tube border diameter
 
         // Fischertechnik connector part
-        difference() {
+        rBlockY=(AxisZDirection != 1) ? 90 : 0;
+        tBlockZ=(AxisZDirection != 1) ? dBlock : 0;
+        translate([0, 0, tBlockZ])rotate([0, rBlockY, 0])translate([0, 0, dBlock])rotate([270, 0, 0])difference() {
             dFti=4 + .8; // axis diameter 4mm + some space around
             gFtiW=3; // with of gap
             gFtiD=2; // depth of gap
@@ -55,7 +61,7 @@ module ftiSpuareTubeAdapter15x15(ftiEndCapLength=15) {
         }
 
         // square tube connector part
-        translate([0, 0, .5+ftiEndCapLength])rotate([0, 90, 0])translate([dBorder, dBorder, ftiEndCapLength])difference() {
+        translate([dBlock-ftiEndCapLength, 0, dBlock])rotate([0, 90, 0])translate([dBorder, dBorder, ftiEndCapLength])difference() {
             // corpus
             cube([dConnector, dConnector, hTubeConn]);
             // space
@@ -77,7 +83,7 @@ module ftiSpuareTubeAdapter15x15(ftiEndCapLength=15) {
         }
 
         // square tube connector part
-        translate([dBlock, dBlock, dBlock])rotate([-90, 0, 180])translate([dBorder, .5+dBorder, ftiEndCapLength])difference() {
+        translate([dBlock, ftiEndCapLength, dBlock])rotate([-90, 0, 180])translate([dBorder, .5+dBorder, ftiEndCapLength])difference() {
             // corpus
             cube([dConnector, dConnector, hTubeConn]);
             // space
