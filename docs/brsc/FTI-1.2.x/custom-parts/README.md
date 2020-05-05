@@ -5,24 +5,65 @@ Brian Schroeder's RepRap FTI-Strap
 Custom parts required for brsc/FTI-1.2.1.
 
 # Chassis
+
+             o . . . . . . . . . . . .o
+            .|                       .|
+           . b                      . b
+          .  |                     .  |
+         .   |                    .   |
+      ..o........................o.. :|
+        |  e:+ . .               |  e:+
+        b  :/                    b  :/
+        |__/ _ e                 |__/ _ e
+        |\c                     /| c
+        |/\ d                d / |/
+        L----------- a ----------R
+
 ## Self printed parts
-- 4x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-15.png)
-- 1 part of 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L](aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L.png)
-- 1 part of 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R](aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R.png)
-- 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15.png)
+- o) 4x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-15.png)
+- L) 1 part of 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L](aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L.png)
+- R) 1 part of 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R](aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R.png)
+- +) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15.png)
 
 ## Standard (non-Fischertechnik parts)
-- 1x aluminium square tube 15mm x 15mm, length=330mm
-- 4x aluminium square tube 15mm x 15mm, length=300mm
-- 2x aluminium square tube 15mm x 15mm, length=210mm
+- a) 1x aluminium square tube 15mm x 15mm, length=330mm
+- b) 4x aluminium square tube 15mm x 15mm, length=300mm
+- c) 2x aluminium square tube 15mm x 15mm, length=210mm
+- d) 2x aluminium square tube 15mm x 15mm, length=85mm
+- e) 4x aluminium square tube 15mm x 15mm, length=105mm
+- 8x Screw M4, etc.
+- 8x Screw M5, etc.
 
-_Bed_
+# Bed
+
+               H                 H
+               H...1---- d ----1.H
+               H /:             :H /b
+               H+==----- e -----=H+
+             o=+------- c -------+~~~~o
+            / /H                /H   /
+           / / H               / H  /
+          a a                 a    a
+         / /                 /    /
+        o=T------- c -------T~~~~o
+
 ## Self printed parts
-- 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-30-X-X' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-30-X-X](aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-30-X-X.png)
-- 4x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-with-hole' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-with-hole](aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-with-hole.png)
-- 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-T' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-T](aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-T.png)
+- +) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-30-X-X' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-30-X-X](aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-30-X-X.png)
+- o) 4x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-with-hole' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-with-hole](aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-with-hole.png)
+- T) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-T' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-T](aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-T.png)
+- 1) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-15.png)
+- =) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-30' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-30](aluminum-square-tube-15x15-to-Fischertechnik-adapter-30.png)
 
 ## Standard (non-Fischertechnik parts)
-- ... TODO ...
+- a) 4x aluminium square tube 15mm x 15mm, length=180mm
+- =) 2x aluminium square tube 15mm x 15mm, length=15mm
+- ~) 2x aluminium square tube 15mm x 15mm, length=60mm
+- b) 2x aluminium square tube 15mm x 15mm, length=30mm
+- c) 2x aluminium square tube 15mm x 15mm, length=170mm
+- d) 1x aluminium square tube 15mm x 15mm, length=75mm
+- e) 1x aluminium square tube 15mm x 15mm, length=105mm
+- H) 2x aluminium H profile inner diameter 15mm x 15mm, length=90mm
+- 4x angle
+- 8x Screw M4, etc.
 
 Details see photos.
