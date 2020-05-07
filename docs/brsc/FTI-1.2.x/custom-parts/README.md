@@ -10,8 +10,8 @@ Custom parts required for brsc/FTI-1.2.1.
             .|                       .|
            . b                      . b
           .  |                     .  |
-         .   |                    .   |
-      ..o........................o.. :|
+      ..............................  |
+      ..+----------- a ----------+.. :|
         |  e:+ . .               |  e:+
         b  :/                    b  :/
         |__/ _ e                 |__/ _ e
@@ -20,13 +20,13 @@ Custom parts required for brsc/FTI-1.2.1.
         L----------- a ----------R
 
 ## Self printed parts
-- o) 4x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-15.png)
+- o) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-15.png)
 - L) 1 part of 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L](aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L.png)
 - R) 1 part of 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R](aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R.png)
-- +) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15.png)
+- +) 4x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15.png)
 
 ## Standard (non-Fischertechnik parts)
-- a) 1x aluminium square tube 15mm x 15mm, length=330mm
+- a) 2x aluminium square tube 15mm x 15mm, length=330mm
 - b) 4x aluminium square tube 15mm x 15mm, length=300mm
 - c) 2x aluminium square tube 15mm x 15mm, length=210mm
 - d) 2x aluminium square tube 15mm x 15mm, length=85mm
@@ -87,3 +87,8 @@ Chassis with Plexiglass board (P) and angles (*)
 - 4x Screw M4 45mm, etc. 
 
 Details see photos.
+
+# Mechanics
+
+## Thingiverse
+- 2x 'Belt_Tensioner_-_Reinforced' ![Belt_Tensioner_-_Reinforced](thingiverse\Belt_Tensioner_-_Reinforced\images\9cd39fd8af52306f8839aff77a5b9034_preview_featured.jpg)
