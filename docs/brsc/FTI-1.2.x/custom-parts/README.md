@@ -7,21 +7,21 @@ Custom parts required for brsc/FTI-1.2.1.
 # Chassis
 
           O. o . . . . . . . . . . . .oO
-         /   |                        /
-        f    b                       f|
-       /     |                      / b
+         /. .|. . . . . . . . . . . . /
+        f    b  o          o         f|
+       /     |  g          g        / b
       o............................o  |
       ..+----------- a ----------+.. :|
-        |  e:+ . .               |  e:+
-        b  :/                    b  :/
+        |  e:+ .g.         g     |  e:+
+        b  :/   O. . . . . O     b  :/
         |__/ _ e                 |__/ _ e
         |\c                     /| c
         |/\ d                d / |/
         L----------- a ----------R
 
 ## Self printed parts
-- o) 4x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-15.png)
-- O) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-45' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-45](aluminum-square-tube-15x15-to-Fischertechnik-adapter-45.png)
+- o) 6x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-15.png)
+- O) 4x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-45' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-45](aluminum-square-tube-15x15-to-Fischertechnik-adapter-45.png)
 - L) 1 part of 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L](aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-L.png)
 - R) 1 part of 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R](aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-z-15-R.png)
 - +) 4x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15.png)
@@ -33,6 +33,7 @@ Custom parts required for brsc/FTI-1.2.1.
 - d) 2x aluminium square tube 15mm x 15mm, length=85mm
 - e) 4x aluminium square tube 15mm x 15mm, length=105mm
 - f) 2x aluminium square tube 15mm x 15mm, length=180mm
+- g) 2x aluminium square tube 15mm x 15mm, length=240mm
 - 8x Screw M4, etc.
 - 8x Screw M5, etc.
 
