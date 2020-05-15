@@ -95,6 +95,3 @@ Details see photos.
 
 ## Thingiverse
 - 2x 'Belt_Tensioner_-_Reinforced' ![Belt_Tensioner_-_Reinforced](thingiverse\Belt_Tensioner_-_Reinforced\images\9cd39fd8af52306f8839aff77a5b9034_preview_featured.jpg)
-
-## Self printed parts
-- 6x 'axis-5mm-to-4mm-Fischertechnik-adapter' ![axis-5mm-to-4mm-Fischertechnik-adapter](axis-5mm-to-4mm-Fischertechnik-adapter.png)
