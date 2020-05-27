@@ -18,7 +18,7 @@ module ftiSpuareTubeAdapter15x15(ftiEndCapLength=15) {
 
     union() {
         dBlock=15 + 1; // block (max) diameter + some more around (adjust to Your printer)
-        hTubeConn=(ftiEndCapLength < 60) ? 30 : (ftiEndCapLength < 75 ? 45 : 60);
+        hTubeConn=(ftiEndCapLength < 60) ? 30 : (ftiEndCapLength < 75 ? 35 : 40);
         dCarveOut=8; // carve out diameter
         oCarveOut=6; // carve out offset
         dConnector=12.5 + .5; // connector (max) diameter + some more around (adjust to Your printer)
