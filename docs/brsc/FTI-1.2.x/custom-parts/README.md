@@ -41,53 +41,45 @@ Custom parts required for brsc/FTI-1.2.1.
 
 Chassis only
 
-                H                   H
-                H...1----- d -----1.H
-                H /:               :H /b
-                H+==------ e ------=H+
-              o_+-------- c --------+~~~~o
-             / /H                  /H   /
-            / / H                 / H  /
-           a a  H                a  H a
-          / /                   /    /
-         / /                   /    /
-        o_T-------- c --------T~~~~o
+                . . . . . . . . . . .
+                :...1----- d -----1.:
+                :  :               ::
+                H+==------ e ------=:+
+              . .. . . .  ... . . . .. . ..
+               .:         .        .:
+              .o--- a --~~~~- b -o. : 
+             . \: . . . .\. . . ...\.
+            .                   .
+         . .                   .. . ..
 
 
 Chassis with Plexiglass board (P) and angles (*)
 
-                H                   H
-                H...1----- d -----1.H
-              PPPPPPPPPPPPPPPPPPPPPPPPPPPP
-             P  *+==------ e ------=*+  P
-            P o_*-------- c --------*~~P~o
-           P / **                  ** P /
-          P / * *                 * *P /
-         P / /                   /  P /
-        PPPPPPPPPPPPPPPPPPPPPPPPPPPP a
-         / /                   /    /
-        o_T-------- c --------T~~~~o
+                . . . . . . . . . . .
+                :...1----- d -----1.:
+              PPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+             PS H+==------ e ------=:+   PS
+            P . .. . . .  ... . . . .. .P..
+           P   .:         .        .:  P
+          P   .o--- a --~~~~- b -o. : P
+         PPPPPPPPPPPPPPPPPPPPPPPPPPPPP
+         S  .                   .    S
+         . .                   .. . ..
 
 ## Self printed parts
 - +) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-30-X-X'; one shortened at junction ```o_+``` ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-30-X-X](aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-30-X-X.png)
-- o) 4x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-with-hole'; two shortened at junction ```o_T``` and ```o_+``` ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-with-hole](aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-with-hole.png)
-- T) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-T'; one shortened at junction ```o_T``` ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-T](aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15-T.png)
+- o) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-15.png)
+- ~) 1x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-30-DE' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-30-DE](aluminum-square-tube-15x15-to-Fischertechnik-adapter-30-DE.png)
 - 1) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-15.png)
 - =) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-30' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-30](aluminum-square-tube-15x15-to-Fischertechnik-adapter-30.png)
 
 ## Standard (non-Fischertechnik parts)
-- a) 4x aluminium square tube 15mm x 15mm, length=180mm
-- _) 2x aluminium square tube 15mm x 15mm, length=15mm
-- ~) 2x aluminium square tube 15mm x 15mm, length=60mm
-- b) 2x aluminium square tube 15mm x 15mm, length=30mm
-- c) 2x aluminium square tube 15mm x 15mm, length=165mm
+- a) 1x aluminium square tube 15mm x 15mm, length=75mm
+- b) 1x aluminium square tube 15mm x 15mm, length=60mm
 - d) 1x aluminium square tube 15mm x 15mm, length=75mm
 - e) 1x aluminium square tube 15mm x 15mm, length=105mm
-- H) 2x aluminium H profile inner diameter 15mm x 15mm, length=90mm
-- *) 2x angle
-- 8x Screw M4, etc.
+- S) 8x Screw M4, etc.
 - P) 1x Plexiglass board 300mm x 210mm, d=5mm
-- 4x Screw M4 45mm, etc. 
 
 Details see photos.
 
