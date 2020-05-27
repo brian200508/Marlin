@@ -42,42 +42,45 @@ Custom parts required for brsc/FTI-1.2.1.
 Chassis only
 
                 . . . . . . . . . . .
-                :...1----- d -----1.:
+                :...o----- d -----o.:
                 :  :               ::
                 H+==------ e ------=:+
-              . .. . . .  ... . . . .. . ..
-               .:         .        .:
-              .o--- a --~~~~- b -o. : 
-             . \: . . . .\. . . ...\.
-            .                   .
-         . .                   .. . ..
+              . O. . . .  ... . . . O. . ..
+               O:         .        O:
+              Oo--- a --~~~~- b -oO : 
+             / \: . . . .\. . . ./.\.
+            c                   c
+         . L-------- f --------L. . ..
 
 
 Chassis with Plexiglass board (P) and angles (*)
 
                 . . . . . . . . . . .
-                :...1----- d -----1.:
+                :...o----- d -----o.:
               PPPPPPPPPPPPPPPPPPPPPPPPPPPPP
              PS H+==------ e ------=:+   PS
-            P . .. . . .  ... . . . .. .P..
-           P   .:         .        .:  P
-          P   .o--- a --~~~~- b -o. : P
+            P . O. . . .  ... . . . O. .P..
+           P   O:         .        O:  P
+          P   Oo--- a --~~~~- b -oO : P
          PPPPPPPPPPPPPPPPPPPPPPPPPPPPP
-         S  .                   .    S
-         . .                   .. . ..
+         S  c                   c    S
+         . L-------- f --------L. . ..
 
 ## Self printed parts
 - +) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-30-X-X'; one shortened at junction ```o_+``` ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-30-X-X](aluminum-square-tube-15x15-to-Fischertechnik-adapter-x-y-30-X-X.png)
-- o) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-15.png)
+- o) 4x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-15.png)
 - ~) 1x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-30-DE' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-30-DE](aluminum-square-tube-15x15-to-Fischertechnik-adapter-30-DE.png)
-- 1) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-15.png)
+- O) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-75' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-75](aluminum-square-tube-15x15-to-Fischertechnik-adapter-75.png)
 - =) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-30' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-30](aluminum-square-tube-15x15-to-Fischertechnik-adapter-30.png)
+- L) 2x 'aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15' ![aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15](aluminum-square-tube-15x15-to-Fischertechnik-adapter-y-z-15.png)
 
 ## Standard (non-Fischertechnik parts)
 - a) 1x aluminium square tube 15mm x 15mm, length=75mm
 - b) 1x aluminium square tube 15mm x 15mm, length=60mm
+- c) 2x aluminium square tube 15mm x 15mm, length=120mm
 - d) 1x aluminium square tube 15mm x 15mm, length=75mm
 - e) 1x aluminium square tube 15mm x 15mm, length=105mm
+- f) 1x aluminium square tube 15mm x 15mm, length=180mm
 - S) 8x Screw M4, etc.
 - P) 1x Plexiglass board 300mm x 210mm, d=5mm
 
