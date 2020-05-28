@@ -76,7 +76,7 @@ Chassis with Plexiglass board (P) and angles (*)
 
 ## Standard (non-Fischertechnik parts)
 - a) 1x aluminium square tube 15mm x 15mm, length=75mm
-- b) 1x aluminium square tube 15mm x 15mm, length=60mm
+- b) 1x aluminium square tube 15mm x 15mm, length=45mm
 - c) 2x aluminium square tube 15mm x 15mm, length=120mm
 - d) 1x aluminium square tube 15mm x 15mm, length=75mm
 - e) 1x aluminium square tube 15mm x 15mm, length=105mm
