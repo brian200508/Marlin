@@ -153,7 +153,13 @@ module Block() {
                             cylinder(r=2 + tolerance / 2, h=width + 2, center=true,$fn = segments);
                             translate([0, -2, 0]) {
                                 cube(size=[3 + tolerance / 2, 3 + tolerance / 2, width + 2], center=true);
-                            }
+                            };
+                            translate([0, -tolerance, -width / 2 + (4 + tolerance) / 2]){
+                                cube(size=[4 + tolerance, 4 + tolerance, 4 + tolerance], center=true);
+                            };
+                            translate([0, -tolerance, width / 2 - (4 + tolerance) / 2]){
+                                cube(size=[4 + tolerance, 4 + tolerance, 4 + tolerance], center=true);
+                            };
                         }
                     }
                 }
@@ -171,7 +177,13 @@ module Block() {
                             cylinder(r=2 + tolerance / 2, h=width + 2, center=true,$fn = segments);
                             translate([0, -2, 0]) {
                                 cube(size=[3 + tolerance / 2, 3 + tolerance / 2, width + 2], center=true);
-                            }
+                            };
+                            translate([0, -tolerance, -width / 2 + (4 + tolerance) / 2]){
+                                cube(size=[4 + tolerance, 4 + tolerance, 4 + tolerance], center=true);
+                            };
+                            translate([0, -tolerance, width / 2 - (4 + tolerance) / 2]){
+                                cube(size=[4 + tolerance, 4 + tolerance, 4 + tolerance], center=true);
+                            };
                         }
                     }
                 }
