@@ -1,7 +1,10 @@
 /**
  * Remix of http://www.thingiverse.com/thing:3574034
+ * 
  * Fischertechnik blocks generator openscad by grumson is licensed under the Creative Commons - Attribution license.
  * http://creativecommons.org/licenses/by/3.0/
+ *
+ * RoundedCube module is taken from https://danielupshaw.com/openscad-rounded-corners/
  */
 
 
@@ -16,6 +19,7 @@ RotateY = 0;
 RotateZ = 0;
 
 segments = 100;
+borderDepth = 0.4;
 
 Main();
 
@@ -49,8 +53,7 @@ module Block() {
 
             width = NumberOfSegments * 15;
 
-            cube(size=[ 15, width, Length], center=true);
-
+            RoundedCube(size=[ 15, width, Length], radius=borderDepth/2, center=true);
 
             // START
             translate([0, -width/2 + 2 + tolerance/2, 0]) {
@@ -89,6 +92,9 @@ module Block() {
                             translate([0, -2, 0]) {
                                 cube(size=[3 + tolerance / 2, 3 + tolerance / 2, Length + 1], center=true);
                             }
+                            // border
+                            translate([0, 0, (Length / 2)])cylinder(r1=2 + tolerance / 2, r2=2 + borderDepth + tolerance / 2, h=borderDepth, center=true,$fn = segments);
+                            translate([0, 0, -(Length / 2)])cylinder(r2=2 + tolerance / 2, r1=2 + borderDepth + tolerance / 2, h=borderDepth, center=true,$fn = segments);
                         }
                     }
                 }
@@ -101,6 +107,9 @@ module Block() {
                             translate([0, -2, 0]) {
                                 cube(size=[3 + tolerance / 2, 3 + tolerance / 2, Length + 1], center=true);
                             }
+                            // border
+                            translate([0, 0, (Length / 2)])cylinder(r1=2 + tolerance / 2, r2=2 + borderDepth + tolerance / 2, h=borderDepth, center=true,$fn = segments);
+                            translate([0, 0, -(Length / 2)])cylinder(r2=2 + tolerance / 2, r1=2 + borderDepth + tolerance / 2, h=borderDepth, center=true,$fn = segments);
                         }
                     }
                 }
@@ -118,6 +127,9 @@ module Block() {
                                 translate([0, -2, 0]) {
                                     cube(size=[3 + tolerance / 2, 3 + tolerance / 2, Length + 1], center=true);
                                 }
+                                // border
+                                translate([0, 0, (Length / 2)])cylinder(r1=2 + tolerance / 2, r2=2 + borderDepth + tolerance / 2, h=borderDepth, center=true,$fn = segments);
+                                translate([0, 0, -(Length / 2)])cylinder(r2=2 + tolerance / 2, r1=2 + borderDepth + tolerance / 2, h=borderDepth, center=true,$fn = segments);
                             }
                         }
                     }
@@ -131,6 +143,9 @@ module Block() {
                                 translate([0, -2, 0]) {
                                     cube(size=[3 + tolerance / 2, 3 + tolerance / 2, Length + 1], center=true);
                                 }
+                                // border
+                                translate([0, 0, (Length / 2)])cylinder(r1=2 + tolerance / 2, r2=2 + borderDepth + tolerance / 2, h=borderDepth, center=true,$fn = segments);
+                                translate([0, 0, -(Length / 2)])cylinder(r2=2 + tolerance / 2, r1=2 + borderDepth + tolerance / 2, h=borderDepth, center=true,$fn = segments);
                             }
                         }
                     }
@@ -197,3 +212,54 @@ module Block() {
     
 
 }// Block()
+
+module RoundedCube(size = [1, 1, 1], center = false, radius = 0.5, apply_to = "all") {
+	// If single value, convert to [x, y, z] vector
+	size = (size[0] == undef) ? [size, size, size] : size;
+
+	translate_min = radius;
+	translate_xmax = size[0] - radius;
+	translate_ymax = size[1] - radius;
+	translate_zmax = size[2] - radius;
+
+	diameter = radius * 2;
+
+	obj_translate = (center == false) ?
+		[0, 0, 0] : [
+			-(size[0] / 2),
+			-(size[1] / 2),
+			-(size[2] / 2)
+		];
+
+	translate(v = obj_translate) {
+		hull() {
+			for (translate_x = [translate_min, translate_xmax]) {
+				x_at = (translate_x == translate_min) ? "min" : "max";
+				for (translate_y = [translate_min, translate_ymax]) {
+					y_at = (translate_y == translate_min) ? "min" : "max";
+					for (translate_z = [translate_min, translate_zmax]) {
+						z_at = (translate_z == translate_min) ? "min" : "max";
+
+						translate(v = [translate_x, translate_y, translate_z])
+						if (
+							(apply_to == "all") ||
+							(apply_to == "xmin" && x_at == "min") || (apply_to == "xmax" && x_at == "max") ||
+							(apply_to == "ymin" && y_at == "min") || (apply_to == "ymax" && y_at == "max") ||
+							(apply_to == "zmin" && z_at == "min") || (apply_to == "zmax" && z_at == "max")
+						) {
+							sphere(r = radius);
+						} else {
+							rotate = 
+								(apply_to == "xmin" || apply_to == "xmax" || apply_to == "x") ? [0, 90, 0] : (
+								(apply_to == "ymin" || apply_to == "ymax" || apply_to == "y") ? [90, 90, 0] :
+								[0, 0, 0]
+							);
+							rotate(a = rotate)
+							cylinder(h = diameter, r = radius, center = true);
+						}
+					}
+				}
+			}
+		}
+	}
+}//RoundedCube
