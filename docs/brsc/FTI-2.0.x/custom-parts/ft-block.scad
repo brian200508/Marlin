@@ -24,7 +24,8 @@ module ftBlock(
     RotateZ = 0,
 
     segments = 100,
-    borderDepth = 0.4) {
+    borderDepth = 0.4,
+    borderApply = "all") {
 
     
     if(NumberOfSegments < 1){NumberOfSegments = 1;}
@@ -37,7 +38,7 @@ module ftBlock(
 
             width = NumberOfSegments * 15;
 
-            roundedCube(size=[ 15, width, Length], radius=borderDepth/2, center=true);
+            roundedCube(size=[ 15, width, Length], radius=borderDepth/2, center=true, apply_to=borderApply);
 
             // START
             translate([0, -width/2 + 2 + tolerance/2, 0]) {
