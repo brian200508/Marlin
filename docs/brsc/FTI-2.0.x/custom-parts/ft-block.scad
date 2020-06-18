@@ -7,7 +7,7 @@
  * roundedCube module is taken from https://danielupshaw.com/openscad-rounded-corners/.
  */
 
-ftBlock();
+//ftBlock();
 
 /**
  * Create Fischertechnik block.
