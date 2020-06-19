@@ -7,7 +7,7 @@
 
 include <ft-block.scad>;
 
-//ftSpuareTubeAdapter15x15(15);
+ftSpuareTubeAdapter15x15(15);
 
 /**
  * Create Fischertechnik block with aligned Z-coordinate.
@@ -15,8 +15,8 @@ include <ft-block.scad>;
 module ftBlockAlignedZ(
     NumberOfSegments = 1,
     Length = 15,
-    TopConnector = true,
-    BottomConnector = true,
+    TopConnector = "female",
+    BottomConnector = "female",
     tolerance = 0.05,
 
     RotateX = 0,
@@ -27,7 +27,11 @@ module ftBlockAlignedZ(
     borderDepth = 0.4,
     borderApply = "all") {
 
-    translate([ 0, 0, Length/2])ftBlock(
+    offsetZ1 = (TopConnector == "male") ? 4 : 0;
+    offsetZ2 = (BottomConnector == "male") ? 4 : 0;
+    offsetZ = offsetZ1 + offsetZ2;
+
+    translate([ 0, 0, offsetZ + Length/2])ftBlock(
         NumberOfSegments = NumberOfSegments,
         Length = Length,
         TopConnector = TopConnector,
@@ -61,10 +65,12 @@ module ftSpuareTubeAdapter15x15(ftEndCapLength=15) {
     dBorder=1; // the square tube border diameter
     dConnector=dBlock-2*dBorder; // connector (max) diameter
 
-    translate([0, 0, ftEndCapLength/2])union() {
+    offsetZ = 4; // BottomConnector = "male"
+
+    translate([0, 0, offsetZ + ftEndCapLength/2])union() {
 
         // Fischertechnik connector part
-        ftBlock(Length=ftEndCapLength, TopConnector = false);
+        ftBlock(Length=ftEndCapLength, TopConnector = false, BottomConnector = "male");
 
         // square tube connector part
         translate([0, 0, hOffsetTC])difference() {
@@ -79,6 +85,41 @@ module ftSpuareTubeAdapter15x15(ftEndCapLength=15) {
     }
 }// ftSpuareTubeAdapter15x15
 
+/*
+ * Create the adapter with Fischertechnik compatible end cap length passed by the argument.
+ *
+ * @param ftEndCapLength end cap length in millimeters (default is 15)
+ */
+module ftSpuareTubeAdapter15x15c30(ftEndCapLength=15) {
+
+    dBlock=15;
+    hTubeConn=30;
+    hOffsetTC=ftEndCapLength/2 + 15;
+    dCarveOut=8; // carve out diameter
+    oCarveOut=6; // carve out offset
+    dBorder=1; // the square tube border diameter
+    dConnector=dBlock-2*dBorder; // connector (max) diameter
+
+    offsetZ = 4; // BottomConnector = "male"
+
+    translate([0, 0, offsetZ + ftEndCapLength/2])union() {
+
+        // Fischertechnik connector part
+        ftBlock(Length=ftEndCapLength, TopConnector = false, BottomConnector = "male");
+
+        // square tube connector part
+        translate([0, 0, hOffsetTC])difference() {
+            // corpus
+            cube([dConnector, dConnector, hTubeConn], center=true);
+            // space
+            translate([dConnector/2, 0, 0])cylinder(h=hTubeConn, d=dCarveOut, center=true);
+            translate([0, dConnector/2, 0])cylinder(h=hTubeConn, d=dCarveOut, center=true);
+            translate([-dConnector/2, 0, 0])cylinder(h=hTubeConn, d=dCarveOut, center=true);
+            translate([0, -dConnector/2, 0])cylinder(h=hTubeConn, d=dCarveOut, center=true);
+        }
+    }
+}// ftSpuareTubeAdapter15x15c30
+
 module ftSquareTubeAdapter15x15_L(
     ftEndCapLength = 30,
     ftBasementLength = 15,
@@ -87,19 +128,43 @@ module ftSquareTubeAdapter15x15_L(
     union() {
 
         translate([0, (ftNumberOfSegments - 1) * 15 / 2, 0])ftBlockAlignedZ(
-            Length = ftBasementLength, 
+            Length = ftBasementLength,
+            BottomConnector = "male",
             NumberOfSegments = ftNumberOfSegments,
             borderApply = "all");
         ftSpuareTubeAdapter15x15(ftEndCapLength);
         for (i = [0 : ftNumberOfSegments - 1]) {
             if (i == ftNumberOfSegments) {
-                translate([i * 15, 0, 0])ftBlockAlignedZ(Length = ftBasementLength, borderApply = "xmax");
+                translate([i * 15, 0, 0])ftBlockAlignedZ(Length = ftBasementLength, BottomConnector = "male", borderApply = "xmax");
             } else {
-                translate([i * 15, 0, 0])ftBlockAlignedZ(Length = ftBasementLength, borderApply = "x");
+                translate([i * 15, 0, 0])ftBlockAlignedZ(Length = ftBasementLength, BottomConnector = "male", borderApply = "x");
             }
         }
     };
 }// ftSquareTubeAdapter15x15_L
+
+module ftSquareTubeAdapter15x15_Lc30(
+    ftEndCapLength = 30,
+    ftBasementLength = 15,
+    ftNumberOfSegments = 2) {
+
+    union() {
+
+        translate([0, (ftNumberOfSegments - 1) * 15 / 2, 0])ftBlockAlignedZ(
+            Length = ftBasementLength,
+            BottomConnector = "male",
+            NumberOfSegments = ftNumberOfSegments,
+            borderApply = "all");
+        ftSpuareTubeAdapter15x15c30(ftEndCapLength);
+        for (i = [0 : ftNumberOfSegments - 1]) {
+            if (i == ftNumberOfSegments) {
+                translate([i * 15, 0, 0])ftBlockAlignedZ(Length = ftBasementLength, BottomConnector = "male", borderApply = "xmax");
+            } else {
+                translate([i * 15, 0, 0])ftBlockAlignedZ(Length = ftBasementLength, BottomConnector = "male", borderApply = "x");
+            }
+        }
+    };
+}// ftSquareTubeAdapter15x15_Lc30
 
 module ftSquareTubeAdapter15x15_R(
     ftEndCapLength = 30,
@@ -109,16 +174,40 @@ module ftSquareTubeAdapter15x15_R(
     union() {
 
         translate([0, (ftNumberOfSegments - 1) * 15 / 2, 0])ftBlockAlignedZ(
-            Length = ftBasementLength, 
+            Length = ftBasementLength,
+            BottomConnector = "male",
             NumberOfSegments = ftNumberOfSegments,
             borderApply = "all");
-        ftSpuareTubeAdapter15x15(ftEndCapLength);
+        ftSpuareTubeAdapter15x15c30(ftEndCapLength);
         for (i = [0 : ftNumberOfSegments - 1]) {
             if (i == ftNumberOfSegments) {
-                translate([-i * 15, 0, 0])ftBlockAlignedZ(Length = ftBasementLength, borderApply = "xmin");
+                translate([-i * 15, 0, 0])ftBlockAlignedZ(Length = ftBasementLength, BottomConnector = "male", borderApply = "xmin");
             } else {
-                translate([-i * 15, 0, 0])ftBlockAlignedZ(Length = ftBasementLength, borderApply = "x");
+                translate([-i * 15, 0, 0])ftBlockAlignedZ(Length = ftBasementLength, BottomConnector = "male", borderApply = "x");
             }
         }
     };
 }// ftSquareTubeAdapter15x15_R
+
+module ftSquareTubeAdapter15x15_Rc30(
+    ftEndCapLength = 30,
+    ftBasementLength = 15,
+    ftNumberOfSegments = 2) {
+
+    union() {
+
+        translate([0, (ftNumberOfSegments - 1) * 15 / 2, 0])ftBlockAlignedZ(
+            Length = ftBasementLength,
+            BottomConnector = "male",
+            NumberOfSegments = ftNumberOfSegments,
+            borderApply = "all");
+        ftSpuareTubeAdapter15x15c30(ftEndCapLength);
+        for (i = [0 : ftNumberOfSegments - 1]) {
+            if (i == ftNumberOfSegments) {
+                translate([-i * 15, 0, 0])ftBlockAlignedZ(Length = ftBasementLength, BottomConnector = "male", borderApply = "xmin");
+            } else {
+                translate([-i * 15, 0, 0])ftBlockAlignedZ(Length = ftBasementLength, BottomConnector = "male", borderApply = "x");
+            }
+        }
+    };
+}// ftSquareTubeAdapter15x15_Rc30

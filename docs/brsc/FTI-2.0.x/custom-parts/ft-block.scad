@@ -4,10 +4,22 @@
  * Fischertechnik blocks generator openscad by grumson is licensed under the Creative Commons - Attribution license.
  * http://creativecommons.org/licenses/by/3.0/.
  *
- * roundedCube module is taken from https://danielupshaw.com/openscad-rounded-corners/.
+ * The 'roundedCube' module is taken from https://danielupshaw.com/openscad-rounded-corners/.
+ *
+ * Male connector is taken from 'Fischer Technik Basic Block' https://www.thingiverse.com/thing:70177.
  */
 
-//ftBlock();
+//ftBlock(NumberOfSegments = 1, TopConnector = "male", BottomConnector = "female");
+
+/**
+ * Create male connector from 'Fischer Technik Basic Block' https://www.thingiverse.com/thing:70177.
+ */
+module ftConnectorMale() {
+    translate([0, 0, -30])difference() {
+        import("ft-block-basic.stl");
+        cube(size=60, center=true);
+    }
+}
 
 /**
  * Create Fischertechnik block.
@@ -15,8 +27,8 @@
 module ftBlock(
     NumberOfSegments = 1,
     Length = 15,
-    TopConnector = true,
-    BottomConnector = true,
+    TopConnector = "female",
+    BottomConnector = "female",
     tolerance = 0.05,
 
     RotateX = 0,
@@ -37,8 +49,33 @@ module ftBlock(
         difference(){
 
             width = NumberOfSegments * 15;
+            offsetY = -(width / 2) - 7.5;
 
-            roundedCube(size=[ 15, width, Length], radius=borderDepth/2, center=true, apply_to=borderApply);
+            union() {
+                if (TopConnector == "male") {
+
+                    for(i = [1 : NumberOfSegments]){
+                        popY = offsetY + i * 15;
+
+                        translate([0, popY, 7.5]) {
+                            ftConnectorMale();
+                        }
+                    }
+                }
+                roundedCube(size=[ 15, width, Length], radius=borderDepth/2, center=true, apply_to=borderApply);
+                if (BottomConnector == "male") {
+
+                    for(i = [1 : NumberOfSegments]){
+                        popY = offsetY + i * 15;
+
+                        translate([0, popY, -7.5]) {
+                            rotate([180, 0, 0]){
+                                ftConnectorMale();
+                            }
+                        }
+                    }
+                }
+            }
 
             // START
             translate([0, -width/2 + 2 + tolerance/2, 0]) {
@@ -143,7 +180,7 @@ module ftBlock(
 
 
             // TOP
-            if(TopConnector){
+            if(TopConnector == "female"){
 
                 popY = (Length / 2) - 2 - tolerance / 2;
 
@@ -167,7 +204,7 @@ module ftBlock(
 
 
             // BOTTOM
-            if(BottomConnector){
+            if(BottomConnector == "female"){
 
                 popY = (Length / 2) - 2 - tolerance / 2;
 
@@ -187,7 +224,6 @@ module ftBlock(
                         }
                     }
                 }
-
             }
 
         }
