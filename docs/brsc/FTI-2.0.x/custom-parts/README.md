@@ -22,8 +22,8 @@ Custom parts required for brsc/FTI-2.0.0.
 ## Self printed parts
 - L) 2x 'ft-square-tube-adapter-15x15-75-15-5-L' ![ft-square-tube-adapter-15x15-75-15-5-L](ft-square-tube-adapter-15x15-75-15-5-L.png)
 - R) 2x 'ft-square-tube-adapter-15x15-75-15-5-R' ![ft-square-tube-adapter-15x15-75-15-5-R](ft-square-tube-adapter-15x15-75-15-5-R.png)
-- l) 1x 'ft-square-tube-adapter-15x15-45-15-2-L' ![ft-square-tube-adapter-15x15-45-15-2-L](ft-square-tube-adapter-15x15-45-15-2-L.png)
-- r) 1x 'ft-square-tube-adapter-15x15-45-15-2-R' ![ft-square-tube-adapter-15x15-45-15-2-R](ft-square-tube-adapter-15x15-45-15-2-R.png)
+- l) 1x 'ft-square-tube-adapter-15x15-75-15-2-L' ![ft-square-tube-adapter-15x15-75-15-2-L](ft-square-tube-adapter-15x15-75-15-2-L.png)
+- r) 1x 'ft-square-tube-adapter-15x15-75-15-2-R' ![ft-square-tube-adapter-15x15-75-15-2-R](ft-square-tube-adapter-15x15-75-15-2-R.png)
 - tdb...
 
 ## Standard (non-Fischertechnik parts)
