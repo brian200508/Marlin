@@ -9,7 +9,7 @@
  * Male connector is taken from 'Fischer Technik Basic Block' https://www.thingiverse.com/thing:70177.
  */
 
-//ftBlock(NumberOfSegments = 1, TopConnector = "male", BottomConnector = "female");
+//translate([0 ,0 , 4 + 7.5])ftBlock(NumberOfSegments = 1, TopConnector = "female", BottomConnector = "male");
 
 /**
  * Create male connector from 'Fischer Technik Basic Block' https://www.thingiverse.com/thing:70177.
