@@ -37,7 +37,9 @@ module ftBlock(
 
     segments = 100,
     borderDepth = 0.4,
-    borderApply = "all") {
+    borderApply = "all",
+    topCorrection = -0.5,
+    bottomCorrection = -0.5) {
 
     
     if(NumberOfSegments < 1){NumberOfSegments = 1;}
@@ -189,7 +191,7 @@ module ftBlock(
                         union(){
                             cylinder(r=2 + tolerance / 2, h=width + 2, center=true,$fn = segments);
                             translate([0, -2, 0]) {
-                                cube(size=[3 + tolerance / 2, 3 + tolerance / 2, width + 2], center=true);
+                                cube(size=[3 + topCorrection + tolerance / 2, 3 + tolerance / 2, width + 2], center=true);
                             };
                             translate([0, -tolerance, -width / 2 + (4 + tolerance) / 2]){
                                 cube(size=[4 + tolerance, 4 + tolerance, 4 + tolerance], center=true);
@@ -213,7 +215,7 @@ module ftBlock(
                         union(){
                             cylinder(r=2 + tolerance / 2, h=width + 2, center=true,$fn = segments);
                             translate([0, -2, 0]) {
-                                cube(size=[3 + tolerance / 2, 3 + tolerance / 2, width + 2], center=true);
+                                cube(size=[3 + bottomCorrection + tolerance / 2, 3 + tolerance / 2, width + 2], center=true);
                             };
                             translate([0, -tolerance, -width / 2 + (4 + tolerance) / 2]){
                                 cube(size=[4 + tolerance, 4 + tolerance, 4 + tolerance], center=true);
