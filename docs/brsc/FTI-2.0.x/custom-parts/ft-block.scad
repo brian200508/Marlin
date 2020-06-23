@@ -36,7 +36,7 @@ module ftBlock(
     RotateZ = 0,
 
     segments = 100,
-    borderDepth = 0.4,
+    borderDepth = 0.5,
     borderApply = "all",
     topCorrectionW = -0.5,
     topCorrectionD = -0.5,
@@ -88,6 +88,13 @@ module ftBlock(
                     translate([0, -2, 0]) {
                         cube(size=[3 + tolerance / 2, 3 + tolerance / 2, Length + 1], center=true);
                     }
+                    // border
+                    if (BottomConnector == "female") {
+                        translate([0, 0, (Length / 2)])cylinder(r1=2 + tolerance / 2, r2=2 + borderDepth + tolerance / 2, h=borderDepth, center=true,$fn = segments);
+                    }
+                    if (TopConnector == "female") {
+                        translate([0, 0, -(Length / 2)])cylinder(r2=2 + tolerance / 2, r1=2 + borderDepth + tolerance / 2, h=borderDepth, center=true,$fn = segments);
+                    }
                 }
             }
 
@@ -99,6 +106,13 @@ module ftBlock(
                         cylinder(r=2 + tolerance / 2, h=Length + 1, center=true,$fn = segments);
                         translate([0, -2, 0]) {
                             cube(size=[3 + tolerance / 2, 3 + tolerance / 2, Length + 1], center=true);
+                        }
+                        // border
+                        if (BottomConnector == "female") {
+                            translate([0, 0, -(Length / 2)])cylinder(r2=2 + tolerance / 2, r1=2 + borderDepth + tolerance / 2, h=borderDepth, center=true,$fn = segments);
+                        }
+                        if (TopConnector == "female") {
+                            translate([0, 0, (Length / 2)])cylinder(r1=2 + tolerance / 2, r2=2 + borderDepth + tolerance / 2, h=borderDepth, center=true,$fn = segments);
                         }
                     }
                 }
