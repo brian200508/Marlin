@@ -31,7 +31,7 @@ module ftBlockAlignedZ(
     offsetZ2 = (BottomConnector == "male") ? 4 : 0;
     offsetZ = offsetZ1 + offsetZ2;
 
-    translate([ 0, 0, offsetZ + Length/2])ftBlock(
+    translate([ 0, 0, offsetZ + Length/2])ftBlockFti2(
         NumberOfSegments = NumberOfSegments,
         Length = Length,
         TopConnector = TopConnector,
@@ -68,7 +68,7 @@ module ftSpuareTubeAdapter15x15(ftEndCapLength=15) {
     translate([0, 0, ftEndCapLength/2])union() {
 
         // Fischertechnik connector part
-        ftBlock(Length=ftEndCapLength, TopConnector = false);
+        ftBlockFti2(Length=ftEndCapLength, TopConnector = false);
 
         // square tube connector part
         translate([0, 0, hOffsetTC])difference() {
@@ -112,7 +112,7 @@ module ftSpuareTubeAdapter15x15de(ftEndCapLength=15) {
         }
 
         // Fischertechnik connector part
-        ftBlock(Length=ftEndCapLength);
+        ftBlockFti2(Length=ftEndCapLength);
 
         // square tube connector part
         translate([0, 0, hOffsetTC])difference() {
@@ -156,7 +156,7 @@ module ftSpuareTubeAdapter15x15dl(ftEndCapLength=15) {
         }
 
         // Fischertechnik connector part
-        ftBlock(Length=ftEndCapLength, TopConnector="none", RotateZ=90);
+        ftBlockFti2(Length=ftEndCapLength, TopConnector="none", RotateZ=90);
 
         // square tube connector part
         translate([0, 0, hOffsetTC + 7.5])difference() {
@@ -189,7 +189,7 @@ module ftSpuareTubeAdapter15x15c30(ftEndCapLength=15) {
     translate([0, 0, ftEndCapLength/2])union() {
 
         // Fischertechnik connector part
-        ftBlock(Length=ftEndCapLength, TopConnector = false);
+        ftBlockFti2(Length=ftEndCapLength, TopConnector = false);
 
         // square tube connector part
         translate([0, 0, hOffsetTC])difference() {

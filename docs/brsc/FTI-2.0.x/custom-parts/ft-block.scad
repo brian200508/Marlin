@@ -22,6 +22,49 @@ module ftConnectorMale() {
 }
 
 /**
+ * Create Fischertechnik block for the brsc FTI-2.x.x printer.
+ */
+module ftBlockFti2(
+    NumberOfSegments = 1,
+    Length = 15,
+    TopConnector = "female",
+    BottomConnector = "female",
+    tolerance = 0.05,
+
+    RotateX = 0,
+    RotateY = 0,
+    RotateZ = 0,
+
+    segments = 100,
+    borderDepth = 0.5,
+    borderApply = "all",
+    topCorrectionW = -0.5,
+    topCorrectionD = 0.2,
+    bottomCorrectionW = -0.5,
+    bottomCorrectionD = 0.2) {
+
+    ftBlock(
+        NumberOfSegments = NumberOfSegments,
+        Length = Length,
+        TopConnector = TopConnector,
+        BottomConnector = BottomConnector,
+        tolerance = tolerance,
+
+        RotateX = RotateX,
+        RotateY = RotateY,
+        RotateZ = RotateZ,
+
+        segments = segments,
+        borderDepth = borderDepth,
+        borderApply = borderApply,
+        topCorrectionW = topCorrectionW,
+        topCorrectionD = topCorrectionD,
+        bottomCorrectionW = bottomCorrectionW,
+        bottomCorrectionD = bottomCorrectionD
+    );
+}
+
+/**
  * Create Fischertechnik block.
  */
 module ftBlock(
@@ -38,10 +81,10 @@ module ftBlock(
     segments = 100,
     borderDepth = 0.5,
     borderApply = "all",
-    topCorrectionW = -0.5,
-    topCorrectionD = -0.5,
-    bottomCorrectionW = -0.5,
-    bottomCorrectionD = -0.5) {
+    topCorrectionW = -0.0,
+    topCorrectionD = 0.0,
+    bottomCorrectionW = -0.0,
+    bottomCorrectionD = 0.0) {
 
     
     if(NumberOfSegments < 1){NumberOfSegments = 1;}
@@ -205,8 +248,8 @@ module ftBlock(
                 translate([0, 0, popY]) {
                     rotate([90, 180, 0]){
                         union(){
-                            cylinder(r=2 + tolerance / 2, h=width + 2, center=true,$fn = segments);
-                            translate([0, -2 + topCorrectionD, 0]) {
+                            translate([0, topCorrectionD, 0])cylinder(r=2 + tolerance / 2, h=width + 2, center=true,$fn = segments);
+                            translate([0, -2, 0]) {
                                 cube(size=[3 + topCorrectionW + tolerance / 2, 3 + tolerance / 2, width + 2], center=true);
                             };
                             translate([0, -tolerance, -width / 2 + (4 + tolerance) / 2]){
@@ -229,8 +272,8 @@ module ftBlock(
                 translate([0, 0, -popY]) {
                     rotate([90, 0, 0]){
                         union(){
-                            cylinder(r=2 + tolerance / 2, h=width + 2, center=true,$fn = segments);
-                            translate([0, -2 + bottomCorrectionD, 0]) {
+                            translate([0, bottomCorrectionD, 0])cylinder(r=2 + tolerance / 2, h=width + 2, center=true,$fn = segments);
+                            translate([0, -2, 0]) {
                                 cube(size=[3 + bottomCorrectionW + tolerance / 2, 3 + tolerance / 2, width + 2], center=true);
                             };
                             translate([0, -tolerance, -width / 2 + (4 + tolerance) / 2]){
