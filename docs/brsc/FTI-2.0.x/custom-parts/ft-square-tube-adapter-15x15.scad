@@ -24,7 +24,7 @@ module ftBlockAlignedZ(
     RotateZ = 0,
 
     segments = 100,
-    borderDepth = 0.4,
+    borderDepth = 1.2,
     borderApply = "all") {
 
     offsetZ1 = (TopConnector == "male") ? 4 : 0;
@@ -84,12 +84,46 @@ module ftSpuareTubeAdapter15x15(ftEndCapLength=15) {
 }// ftSpuareTubeAdapter15x15
 
 /*
+ * Create an upside down adapter with Fischertechnik compatible end cap length passed by the argument.
+ * (For more beautiful Fischertechnik compatible end cap.)
+ *
+ * @param ftEndCapLength end cap length in millimeters (default is 15)
+ */
+module ftSpuareTubeAdapter15x15inv(ftEndCapLength=15) {
+    dBlock=15;
+    hTubeConn=(ftEndCapLength < 60) ? 30 : (ftEndCapLength < 75 ? 45 : 60);
+    hOffsetTC=(ftEndCapLength < hTubeConn) ? ftEndCapLength : hTubeConn;
+    hOffsetT2=(ftEndCapLength < hTubeConn) ? 0 : hOffsetTC;
+    hOffsetT3=(ftEndCapLength < 45) ? 0 : 15;
+    dCarveOut=8; // carve out diameter
+    oCarveOut=6; // carve out offset
+    dBorder=1; // the square tube border diameter
+    dConnector=dBlock-2*dBorder; // connector (max) diameter
+
+    translate([0, 0, ftEndCapLength + hTubeConn - hOffsetTC + hOffsetT2/2 - hOffsetT3])union() {
+
+        // Fischertechnik connector part
+        ftBlockFti2(Length=ftEndCapLength, BottomConnector = false);
+
+        // square tube connector part
+        translate([0, 0, -hOffsetTC])difference() {
+            // corpus
+            cube([dConnector, dConnector, hTubeConn], center=true);
+            // space
+            translate([dConnector/2, 0, 0])cylinder(h=hTubeConn, d=dCarveOut, center=true);
+            translate([0, dConnector/2, 0])cylinder(h=hTubeConn, d=dCarveOut, center=true);
+            translate([-dConnector/2, 0, 0])cylinder(h=hTubeConn, d=dCarveOut, center=true);
+            translate([0, -dConnector/2, 0])cylinder(h=hTubeConn, d=dCarveOut, center=true);
+        }
+    }
+}// ftSpuareTubeAdapter15x15inv
+
+/*
  * Create the adapter with Fischertechnik compatible end cap length passed by the argument.
  *
  * @param ftEndCapLength end cap length in millimeters (default is 15)
  */
 module ftSpuareTubeAdapter15x15m(ftEndCapLength=15) {
-
     dBlock=15;
     hTubeConn=(ftEndCapLength < 60) ? 30 : (ftEndCapLength < 75 ? 45 : 60);
     hOffsetTC=(ftEndCapLength < hTubeConn) ? ftEndCapLength : hTubeConn;

@@ -7,4 +7,4 @@
 
 include <ft-square-tube-adapter-15x15.scad>;
 
-ftSpuareTubeAdapter15x15(45);
+ftSpuareTubeAdapter15x15inv(45);
