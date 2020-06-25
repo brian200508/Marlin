@@ -84,6 +84,39 @@ module ftSpuareTubeAdapter15x15(ftEndCapLength=15) {
 }// ftSpuareTubeAdapter15x15
 
 /*
+ * Create the adapter with Fischertechnik compatible end cap length passed by the argument.
+ *
+ * @param ftEndCapLength end cap length in millimeters (default is 15)
+ */
+module ftSpuareTubeAdapter15x15m(ftEndCapLength=15) {
+
+    dBlock=15;
+    hTubeConn=(ftEndCapLength < 60) ? 30 : (ftEndCapLength < 75 ? 45 : 60);
+    hOffsetTC=(ftEndCapLength < hTubeConn) ? ftEndCapLength : hTubeConn;
+    dCarveOut=8; // carve out diameter
+    oCarveOut=6; // carve out offset
+    dBorder=1; // the square tube border diameter
+    dConnector=dBlock-2*dBorder; // connector (max) diameter
+
+    translate([0, 0, 4 + ftEndCapLength/2])union() {
+
+        // Fischertechnik connector part
+        ftBlockFti2(Length=ftEndCapLength, BottomConnector = "male");
+
+        // square tube connector part
+        translate([0, 0, hOffsetTC])difference() {
+            // corpus
+            cube([dConnector, dConnector, hTubeConn], center=true);
+            // space
+            translate([dConnector/2, 0, 0])cylinder(h=hTubeConn, d=dCarveOut, center=true);
+            translate([0, dConnector/2, 0])cylinder(h=hTubeConn, d=dCarveOut, center=true);
+            translate([-dConnector/2, 0, 0])cylinder(h=hTubeConn, d=dCarveOut, center=true);
+            translate([0, -dConnector/2, 0])cylinder(h=hTubeConn, d=dCarveOut, center=true);
+        }
+    }
+}// ftSpuareTubeAdapter15x15f
+
+/*
  * Create a double ended adapter with Fischertechnik compatible end cap length passed by the argument.
  *
  * @param ftEndCapLength end cap length in millimeters (default is 15)
