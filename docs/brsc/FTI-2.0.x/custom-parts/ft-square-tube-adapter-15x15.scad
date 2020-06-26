@@ -119,6 +119,20 @@ module ftSpuareTubeAdapter15x15inv(ftEndCapLength=15) {
 }// ftSpuareTubeAdapter15x15inv
 
 /*
+ * Create an upside down adapter with Fischertechnik compatible end cap length passed by the argument.
+ * (For more beautiful Fischertechnik compatible end cap.)
+ *
+ * @param ftEndCapLength end cap length in millimeters (default is 15)
+ * @param cutConnectorBy shorten square tube adapter by millimeters (default is 30)
+ */
+module ftSpuareTubeAdapter15x15invCxx(ftEndCapLength=15, cutConnectorBy=30) {
+    translate([0, 0, -cutConnectorBy])difference() {
+        ftSpuareTubeAdapter15x15inv(ftEndCapLength);
+        cube([cutConnectorBy, cutConnectorBy, 2*cutConnectorBy], center=true);
+    }
+}// ftSpuareTubeAdapter15x15invCxx
+
+/*
  * Create the adapter with Fischertechnik compatible end cap length passed by the argument.
  *
  * @param ftEndCapLength end cap length in millimeters (default is 15)
