@@ -15,27 +15,23 @@ Custom parts required for brsc/FTI-2.0.0.
        /     | |            |        /     |
       o.............................o      |
       qp------------ a ------------pq      |
-      |     .R |            |       |     .L
-      |     .R |            |       |     .L
-      |    . RR|R . . . . . | . . . | . L.LL
-      |    .R  |            |       |    .L
-      b    o   l. . . . . . r       b    o
+      |     .t |            |       |     .t
+      |     .t t            t       |     .t
+      |    . tsts . . . . . t . . . | . s.st
+      |    .s  t            t       |    .s
+      b    s   t. . . . . . t       b    s
       |   / - c                     |   / - c
-      L..o                          R..o
-      L.L                          .R R
-      LL.                         . RR
-      LLLLo--------- a ---------oRRRR
+      t..s                          t..s
+      t.s                          .t s
+      ts.                         . ts
+      tsss---------- a ----------ssst
 
 ## Self printed parts
-- L) 2x 'ft-square-tube-adapter-15x15-75-15-5-L' ![ft-square-tube-adapter-15x15-75-15-5-L](ft-square-tube-adapter-15x15-75-15-5-L.png)
-- R) 2x 'ft-square-tube-adapter-15x15-75-15-5-R' ![ft-square-tube-adapter-15x15-75-15-5-R](ft-square-tube-adapter-15x15-75-15-5-R.png)
-- l) 1x 'ft-square-tube-adapter-15x15-75-15-2-L' ![ft-square-tube-adapter-15x15-75-15-2-L](ft-square-tube-adapter-15x15-75-15-2-L.png)
-- r) 1x 'ft-square-tube-adapter-15x15-75-15-2-R' ![ft-square-tube-adapter-15x15-75-15-2-R](ft-square-tube-adapter-15x15-75-15-2-R.png)
-- o) 10x 'ft-square-tube-adapter-15x15-15' ![ft-square-tube-adapter-15x15-15](ft-square-tube-adapter-15x15-15.png)
+- o) 4x 'ft-square-tube-adapter-15x15-15' ![ft-square-tube-adapter-15x15-15](ft-square-tube-adapter-15x15-15.png)
 - p) 2x 'ft-square-tube-adapter-15x15-30' ![ft-square-tube-adapter-15x15-30](ft-square-tube-adapter-15x15-30.png)
 - q) 2x 'ft-square-tube-adapter-15x15-45' ![ft-square-tube-adapter-15x15-45](ft-square-tube-adapter-15x15-45.png)
-- s) 4x 'ft-square-tube-adapter-15x15-60' ![ft-square-tube-adapter-15x15-60](ft-square-tube-adapter-15x15-60.png)
-- tdb...
+- s) 12x 'ft-square-tube-adapter-15x15-60' ![ft-square-tube-adapter-15x15-60](ft-square-tube-adapter-15x15-60.png)
+- t) 6x 'ft-square-tube-adapter-15x15-75' ![ft-square-tube-adapter-15x15-75](ft-square-tube-adapter-15x15-75.png)
 
 ## Standard (non-Fischertechnik parts)
 - a) 1x aluminium square tube 15mm x 15mm, length=???mm
