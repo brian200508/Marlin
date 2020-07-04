@@ -29,7 +29,7 @@ module ftBlockFti2(
     Length = 15,
     TopConnector = "female",
     BottomConnector = "female",
-    tolerance = 0.05,
+    tolerance = -0.1,
 
     RotateX = 0,
     RotateY = 0,
