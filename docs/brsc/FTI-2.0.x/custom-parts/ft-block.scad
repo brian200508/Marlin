@@ -38,9 +38,9 @@ module ftBlockFti2(
     segments = 100,
     borderDepth = 1.2,
     borderApply = "all",
-    topCorrectionW = -0.6,
+    topCorrectionW = -0.3,
     topCorrectionD = 0.9,
-    bottomCorrectionW = -0.6,
+    bottomCorrectionW = -0.3,
     bottomCorrectionD = 0.9) {
 
     ftBlock(
