@@ -29,7 +29,7 @@ module ftBlockFti2(
     Length = 15,
     TopConnector = "female",
     BottomConnector = "female",
-    tolerance = -0.1,
+    tolerance = 0.0,
 
     RotateX = 0,
     RotateY = 0,
@@ -39,9 +39,9 @@ module ftBlockFti2(
     borderDepth = 1.2,
     borderApply = "all",
     topCorrectionW = -0.3,
-    topCorrectionD = 0.9,
+    topCorrectionD = 0.6,
     bottomCorrectionW = -0.3,
-    bottomCorrectionD = 0.9) {
+    bottomCorrectionD = 0.6) {
 
     ftBlock(
         NumberOfSegments = NumberOfSegments,
