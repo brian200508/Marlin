@@ -21,7 +21,7 @@ module arduinoCaseTop() {
         offsetRear = 52.5;
         offsetRearZ = 18.6;
         offsetFront = offsetRear - 90;
-        offsetX = 52.5;
+        offsetX = 52.0;
         
         // front connectors
         for(i = [1:1:connectorCount]) {
@@ -29,7 +29,7 @@ module arduinoCaseTop() {
         }
 
         // rear
-        rotate([-15, 0, 0])translate([0, -42.6, 18.6])cube([97.4, 5, 15], center=true);  
+        rotate([-15, 0, 0])translate([0, -42.6, 18.6])cube([97.4, 3.2, 15], center=true);  
 
         // rear connectors
         for(i = [1:1:connectorCount]) {
