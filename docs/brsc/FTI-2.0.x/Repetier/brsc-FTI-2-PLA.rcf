@@ -1,7 +1,7 @@
 [filament]
 name = brsc-FTI-2-PLA
 diameter = 1.75
-multiplierPercent = 100
+multiplierPercent = 95
 printingTemperature = 200
 enableCooling = True
 bedTemperature = 0
