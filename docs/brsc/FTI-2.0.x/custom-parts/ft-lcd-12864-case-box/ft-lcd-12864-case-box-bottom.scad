@@ -45,8 +45,8 @@ module arduinoCaseBottom() {
             sh = 2;
             connectorCount = 7;
             offsetX = -w/2;
-            offsetYFront = d/2;
-            offsetYRear = -d/2;
+            offsetYFront = d/2 + 1;
+            offsetYRear = -d/2 - 1;
             for(i = [0:1:connectorCount - 1]) {
                 translate([offsetX + 15*i + 7.5, offsetYFront, sh/2])connectorLE45mm(length=(h - sh));
                 translate([offsetX + 15*i + 7.5, offsetYRear, sh/2])connectorLE45mm(length=(h - sh));
@@ -55,8 +55,8 @@ module arduinoCaseBottom() {
             // left and right connectors
             connectorLRCount = 7;
             offsetY = -d/2;
-            offsetXLeft = w/2;
-            offsetXRight = -w/2;
+            offsetXLeft = w/2 + 1;
+            offsetXRight = -w/2 - 1;
             for(i = [0:1:connectorLRCount - 1]) {
                 translate([offsetXLeft, offsetY + 15*i + 7.5, sh/2])rotate([0 ,0, 90])connectorLE45mm(length=(h - sh));
                 translate([offsetXRight, offsetY + 15*i + 7.5, sh/2])rotate([0 ,0, 90])connectorLE45mm(length=(h - sh));
