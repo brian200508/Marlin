@@ -6,8 +6,9 @@
  * http://creativecommons.org/licenses/by-nc-sa/3.0/.
  */
 
-ftArduinoCaseTop();
+include <ft-connect.scad>;
 
+ftArduinoCaseTop();
 
 module ftArduinoCaseTop() {
     arduinoCaseTop();
@@ -20,8 +21,8 @@ module arduinoCaseTop() {
     d = 105;
     b = 2.5;
     f = 6.5;
-    s = 5;
-    r = 5;
+    s = 7.5;
+    r = 15;
 
     difference() {
         union() {
@@ -33,10 +34,7 @@ module arduinoCaseTop() {
             }
             
             // border
-            translate([0, 0, h/2])difference() {
-                cube([w, d, h], center=true);
-                cube([w - 2*b, d - 2*b, h], center=true);
-            }
+            //translate([0, 0, h/2])cube([w - 2*b, d - 2*b, h], center=true);
 
             // frame on front
             translate([0, 0, b/2])difference() {
@@ -45,40 +43,39 @@ module arduinoCaseTop() {
             }
 
             // front and rear connectors
-            sh = 2;
             connectorCount = 7;
-            offsetX = -w/2;
-            offsetYFront = d/2 + 1;
-            offsetYRear = -d/2 - 1;
+            offsetX = -w/2 + 7.5;
+            offsetYFront = d/2 - 7.5;
+            offsetYRear = -d/2 + 7.5;
             for(i = [0:1:connectorCount - 1]) {
-                translate([offsetX + 15*i + 7.5, offsetYFront, sh/2])connectorLE45mm(length=(h - sh));
-                translate([offsetX + 15*i + 7.5, offsetYRear, sh/2])connectorLE45mm(length=(h - sh));
+                translate([offsetX + 15*i, offsetYFront, h/2])rotate([0, 0, -90])ftConnector(Length=h);
+                translate([offsetX + 15*i, offsetYRear, h/2])rotate([0, 0, 90])ftConnector(Length=h);
             }
 
             // left and right connectors
             connectorLRCount = 7;
             offsetY = -d/2;
-            offsetXLeft = w/2 + 1;
-            offsetXRight = -w/2 - 1;
+            offsetXLeft = w/2 - 7.5;
+            offsetXRight = -w/2 + 7.5;
             for(i = [0:1:connectorLRCount - 1]) {
-                translate([offsetXLeft, offsetY + 15*i + 7.5, sh/2])rotate([0 ,0, 90])connectorLE45mm(length=(h - sh));
-                translate([offsetXRight, offsetY + 15*i + 7.5, sh/2])rotate([0 ,0, 90])connectorLE45mm(length=(h - sh));
+                translate([offsetXLeft, offsetY + 15*i + 7.5, h/2])rotate([0, 0, 180])ftConnector(Length=h);
+                translate([offsetXRight, offsetY + 15*i + 7.5, h/2])rotate([0, 0, 0])ftConnector(Length=h);
             }
         }
 
         // slot at rear
-        translate([0, -d/2, h-s/2])rotate([0, 0, 90])cube([7.5, w - 30, s], center=true);
+        translate([0, -d/2, h - s/2])rotate([0, 0, 90])cube([15, w - 30, s], center=true);
         
         // SD-slot at left
-        translate([-w/2 -b-2.2, 0, h/2 - r/2 -2.0])cube([15, d - 60, r], center=true);
+        translate([-w/2 -b-2.2, -7.5, h/2 - r/2 + 3.5])cube([22.5, d - 75, r], center=true);
         
     }
 }
 
-module connectorLE45mm(length=45) {
+module ftConnector(Length) {
     difference() {
-    
-        translate([20, 0, 7.0])rotate([90, 0, 0])import("fischertechnik_double_flat_connector/files/Connector_45mm_v1.stl");
-        translate([0, 0, 45-(45-length)/2])cube([200, 200, 45-length], center=true);
+        ftConnectFti2(Length=Length);
+        cube([4, 15, Length], center=true);
     }
 }
+    
