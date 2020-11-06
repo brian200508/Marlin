@@ -4,7 +4,7 @@
  * @since 02.09.2020
  */
 
-ftSpuareTubeStabilizer15x15_30();
+rotate([-90, -45, 0])ftSpuareTubeStabilizer15x15_30();
 
 module ftSpuareTubeStabilizer15x15_30(overlap=15) {
 
