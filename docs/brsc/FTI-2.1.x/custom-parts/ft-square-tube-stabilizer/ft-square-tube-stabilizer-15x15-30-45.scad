@@ -10,12 +10,13 @@ module ftSpuareTubeStabilizer15x15_30(overlap=15) {
 
     totalLength = 30 + overlap;
     offsetConn = totalLength / 2;
+    offsetD = -0.25;
 
     difference() {
         union() {
             cube(size= [totalLength, totalLength, 15]);
-            translate([offsetConn, 0, 0]) ftConnetor30();
-            translate([totalLength, 7.5, 0]) rotate([0, 0, 90]) ftConnetor30();
+            translate([offsetConn, offsetD, 0]) ftConnetor30();
+            translate([totalLength - offsetD, 7.5, 0]) rotate([0, 0, 90]) ftConnetor30();
         }
 
         rotate([0, 0, 45]) cube(size = [totalLength * 2, totalLength * 2, 15]);
