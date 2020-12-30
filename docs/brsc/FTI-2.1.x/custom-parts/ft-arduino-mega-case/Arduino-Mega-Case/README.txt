@@ -1,1 +1,0 @@
-Arduino Mega Case by Fischkopf on Thingiverse: https://www.thingiverse.com/thing:4340259
