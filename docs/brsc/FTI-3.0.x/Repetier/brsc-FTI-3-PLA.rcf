@@ -1,5 +1,5 @@
 [filament]
-name = brsc-FTI-2-PLA
+name = brsc-FTI-3-PLA
 diameter = 1.75
 multiplierPercent = 100
 printingTemperature = 200
