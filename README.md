@@ -7,7 +7,7 @@ Another Fischertechnik RepRap Strap (using Marlin 3D Printer Firmware) built wit
 - RAMPS 1.6 Board
 - GT2 timing belts and gears
 
-![Photo RepRap FTI-Strap](docs/brsc/FTI-3.0.x/Pictures/2021-01-11/20210111_120654.jpg)
+![Photo RepRap FTI-Strap](docs/brsc/FTI-3.0.x/Pictures/2021-02-24/20210224_114137.jpg)
 
 For more Details concerning the mechanics see ```docs/brsc/FTI-3.0.x```.
 
