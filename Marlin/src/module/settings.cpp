@@ -1095,7 +1095,7 @@ void MarlinSettings::postprocess() {
     {
       _FIELD_TEST(bedPID);
       #if ENABLED(PIDTEMPBED)
-        const PID_t &pid = thermalManager.temp_bed.pid;
+        const auto &pid = thermalManager.temp_bed.pid;
         const raw_pid_t bed_pid = { pid.p(), pid.i(), pid.d() };
       #else
         const raw_pid_t bed_pid = { NAN, NAN, NAN };
@@ -1109,7 +1109,7 @@ void MarlinSettings::postprocess() {
     {
       _FIELD_TEST(chamberPID);
       #if ENABLED(PIDTEMPCHAMBER)
-        const PID_t &pid = thermalManager.temp_chamber.pid;
+        const auto &pid = thermalManager.temp_chamber.pid;
         const raw_pid_t chamber_pid = { pid.p(), pid.i(), pid.d() };
       #else
         const raw_pid_t chamber_pid = { NAN, NAN, NAN };
@@ -1685,7 +1685,7 @@ void MarlinSettings::postprocess() {
         stored_ver[1] = '\0';
       }
       DEBUG_ECHO_MSG("EEPROM version mismatch (EEPROM=", stored_ver, " Marlin=" EEPROM_VERSION ")");
-      TERN_(DWIN_LCD_PROUI, LCD_MESSAGE(MSG_ERR_EEPROM_VERSION));
+      LCD_MESSAGE(MSG_ERR_EEPROM_VERSION);
       TERN_(HOST_PROMPT_SUPPORT, hostui.notify(GET_TEXT_F(MSG_ERR_EEPROM_VERSION)));
 
       IF_DISABLED(EEPROM_AUTO_INIT, ui.eeprom_alert_version());
@@ -2631,7 +2631,7 @@ void MarlinSettings::postprocess() {
       else if (working_crc != stored_crc) {
         eeprom_error = true;
         DEBUG_ERROR_MSG("EEPROM CRC mismatch - (stored) ", stored_crc, " != ", working_crc, " (calculated)!");
-        TERN_(DWIN_LCD_PROUI, LCD_MESSAGE(MSG_ERR_EEPROM_CRC));
+        LCD_MESSAGE(MSG_ERR_EEPROM_CRC);
         TERN_(HOST_EEPROM_CHITCHAT, hostui.notify(GET_TEXT_F(MSG_ERR_EEPROM_CRC)));
         IF_DISABLED(EEPROM_AUTO_INIT, ui.eeprom_alert_crc());
       }
