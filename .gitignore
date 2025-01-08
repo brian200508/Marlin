@@ -125,6 +125,7 @@ vc-fileutils.settings
 # Visual Studio Code
 .vscode/*
 !.vscode/extensions.json
+*.code-workspace
 
 # Simulation files
 imgui.ini
@@ -169,3 +170,6 @@ tags
 *.logs
 *.bak
 .vscode/extensions.json
+.aider*
+!.aiderignore
+.env
